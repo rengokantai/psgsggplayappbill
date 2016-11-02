@@ -36,6 +36,38 @@ then refer to [this](https://developer.android.com/google/play/billing/billing_i
 
 
 ###3 Purchase Process
-(getPurchases, getSkuDetails)->getBuyIntent->onActivityResult
+(getPurchases, getSkuDetails)->getBuyIntent->onActivityResult (startIntentSenderForResult)
 
 ###4 Methods for In-app Billing
+
+####getSkuDetails
+```
+Bundle getSkuDetails(int apiVersion, String packageName, String type, Bundle skusBundle)
+```
+
+
+####Purchase result
+```
+RESPONSE_CODE
+INAPP_PURCHASE_DATA
+INAPP_DATA_SIGNATURE
+```
+
+####08:58
+```
+int consumePurchase(int apiVersion,String packageName, String purchaseToken);
+```
+###5 Summing Up
+####managed items
+getPurchases->onCreate--(if sth not consumed)->consumePurchase--(else)-->getBuyIntent->consumePurchase
+
+####subscriptions
+subs
+```
+Bundle bundle = inAppBillingService.getPurchases(3,packageName,"subs");
+```
+
+####02:02 Blocking UI?
+safe for UI: isBillingSupported  getBuyIntent  
+Blocking UI: getPurchases consumePurchase getSkuDetails
+
