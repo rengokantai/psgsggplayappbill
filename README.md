@@ -93,6 +93,9 @@ buildTypes{
 
 ###4 Risk2 Replace the public key
 
+###7 Risk5 conterfeit
+Developer Payload
+
 
 
 ##5. Increasing Your Sales
