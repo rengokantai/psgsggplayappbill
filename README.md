@@ -71,3 +71,28 @@ Bundle bundle = inAppBillingService.getPurchases(3,packageName,"subs");
 safe for UI: isBillingSupported  getBuyIntent  
 Blocking UI: getPurchases consumePurchase getSkuDetails
 
+
+##4. Securing Your In-app Billing
+###2 Demo Hack our own app
+MyAppSharer  (extract apk from installed app)
+dex-jar 2.0  (apk->jar)
+jd-gui  (jar->class)
+
+###3 Risk1
+add proguard,
+####00:46
+build.gradle
+```
+buildTypes{
+  release{
+    minifyEnabled true
+    proguardFiles getDefaultProguardFile('android.txt'), 'proguard.pro'
+  }
+}
+```
+
+###4 Risk2 Replace the public key
+
+
+
+##5. Increasing Your Sales
